@@ -23,6 +23,7 @@ namespace CommandingAndBindingDemo
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }

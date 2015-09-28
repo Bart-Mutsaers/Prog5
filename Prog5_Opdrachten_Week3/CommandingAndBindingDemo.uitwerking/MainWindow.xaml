@@ -39,7 +39,6 @@
             </Rectangle>
 
 
-
             <Image Panel.ZIndex="2" Height="177" Source="meter.png" Stretch="Fill" Width="170" Canvas.Left="10" Canvas.Top="2"/>
             <Image Panel.ZIndex="2" Height="32" Source="rotate.png" Stretch="Fill" Width="114" Canvas.Left="37" Canvas.Top="78" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
