@@ -89,6 +89,8 @@ a:hover{
 	border-right:6px solid white;
 	border-left:6px solid white;
 	border-bottom:12px solid white;
+	margin-top:8px;
+	margin-bottom:8px;
 }
 
 .content article img.right{

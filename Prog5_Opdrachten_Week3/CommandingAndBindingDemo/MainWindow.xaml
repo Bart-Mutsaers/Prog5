@@ -14,6 +14,7 @@
     </Window.DataContext>
 
     <StackPanel>
+            
         <Label Content="The temperature is"/>
         <Label Content="{Binding Temperature}"></Label>
         <Slider Value="{Binding Temperature, UpdateSourceTrigger=PropertyChanged}" Maximum="300" Minimum="0"></Slider>
