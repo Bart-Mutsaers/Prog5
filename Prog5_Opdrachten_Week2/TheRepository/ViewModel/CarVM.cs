@@ -42,10 +42,16 @@ namespace TheRepository.ViewModel
 
         public double Bijtelling
         {
-            get { return _car.Prijs; }
+            get { 
+              // oude code
+              //return _car.Prijs;
+            return _car.Bijtelling;
+          }
             set
             {
-                _car.Prijs = value;
+              // oude code
+                //_car.Prijs = value;
+                _car.Bijtelling = value;
                 RaisePropertyChanged();
             }
         }

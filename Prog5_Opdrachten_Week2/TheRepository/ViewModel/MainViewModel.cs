@@ -35,7 +35,9 @@ namespace TheRepository.ViewModel
         public MainViewModel(ICarRepository carRepository)
         {
             this._carRepository = carRepository;
-            var cars = carRepository.GetAllCars().Where(c => !c.Actief).ToList();
+          // oude code
+          //  var cars = carRepository.GetAllCars().Where(c => !c.Actief).ToList();
+            var cars = carRepository.GetAllCars().Where(c => c.Actief).ToList();
             this.MyCars = new ObservableCollection<CarVM>(cars.Select(c => new CarVM(c)));
         }
 

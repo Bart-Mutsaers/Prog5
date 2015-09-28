@@ -6,7 +6,8 @@
 
     <Window.Resources>
         <local:DegreesToAngleConverter x:Key="converter" />
-    </Window.Resources>
+        <local:CelsiusToFahrenheitConverter x:Key="temperatuur" />
+  </Window.Resources>
 
     <Window.DataContext>
         <!-- Declaratively create an instance of our TemperatureVM -->
@@ -15,11 +16,11 @@
 
     <StackPanel>
         <Label Content="The temperature is"/>
-        <Label Content="{Binding Temperature}"></Label>
+        <Label Content="{Binding Temperature, StringFormat={}{0:#.00}}"></Label>
         <Slider Value="{Binding Temperature, UpdateSourceTrigger=PropertyChanged}" Maximum="300" Minimum="0"></Slider>
         <Canvas Height="249">
 
-            <Rectangle Panel.ZIndex="1" Height="34" Canvas.Top="17" Width="200" Canvas.Left="194" VerticalAlignment="Bottom" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+      <Rectangle Panel.ZIndex="1" Height="34" Canvas.Top="17" Width="{Binding Temperature, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="194" VerticalAlignment="Bottom" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -29,7 +30,7 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
                 <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="300,0" StartPoint="0,0" MappingMode="Absolute">
+          <LinearGradientBrush EndPoint="300,0" StartPoint="0,0" MappingMode="Absolute">
                         <GradientStop Color="#FFA69CD1" Offset="0.006"/>
                         <GradientStop Color="Red" Offset="1"/>
                         <GradientStop Color="#FFE09337" Offset="0.475"/>
@@ -45,7 +46,7 @@
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="{Binding Temperature, Converter={StaticResource converter}}"/>
+            <RotateTransform Angle="{Binding Temperature, Converter={StaticResource converter}}"/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </Image.RenderTransform>
@@ -53,7 +54,7 @@
             <Border BorderBrush="Black" BorderThickness="1" Height="152" Canvas.Left="185" Canvas.Top="10" Width="316">
                 <Grid Margin="0,0,9,0">
                     <Label Content="De temperatuur in Fahrenheit is:" Margin="9,113,10,9"/>
-                    <Label Content="Weet ik niet :(" HorizontalAlignment="Left" Margin="198,113,0,0" VerticalAlignment="Top" Background="White" FontWeight="Bold"/>
+          <Label Content="{Binding Temperature, Converter={StaticResource temperatuur}}" HorizontalAlignment="Left" Margin="198,113,0,0" VerticalAlignment="Top" Background="White" FontWeight="Bold"/>
                 </Grid>
                
             </Border>
@@ -63,7 +64,7 @@
             <Border BorderBrush="Black" BorderThickness="1" Height="33" Canvas.Left="6" Canvas.Top="179" Width="501">
                 <Grid Margin="0,0,0,-1">
                     <Button Content="Set low" Height="22" Canvas.Left="10" Canvas.Top="183" Width="96" Command="{Binding SetLowCommand}" Margin="6,5,397,5"/>
-                    <Button Content="Set High" Height="22" Canvas.Left="405" Canvas.Top="183" Width="96" Command="{Binding SetHighCommand}" Margin="398,5,5,5"/>
+                    <Button Content="Set High" Height="22" Canvas.Left="405" Canvas.Top="183" Width="96" Command="{Binding SetHoogCommand}" Margin="398,5,5,5"/>
                 </Grid>
             </Border>
 

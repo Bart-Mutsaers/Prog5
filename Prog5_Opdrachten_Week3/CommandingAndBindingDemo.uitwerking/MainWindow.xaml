@@ -64,7 +64,7 @@
             <Border BorderBrush="Black" BorderThickness="1" Height="33" Canvas.Left="6" Canvas.Top="179" Width="501">
                 <Grid Margin="0,0,0,-1">
                     <Button Content="Set low" Height="22" Canvas.Left="10" Canvas.Top="183" Width="96" Command="{Binding SetLowCommand}" Margin="6,5,397,5"/>
-                    <Button Content="Set High" Height="22" Canvas.Left="405" Canvas.Top="183" Width="96" Command="{Binding SetHighCommand}" Margin="398,5,5,5"/>
+                    <Button Content="Set High" Height="22" Canvas.Left="405" Canvas.Top="183" Width="96" Command="{Binding SetHigh}" Margin="398,5,5,5"/>
                 </Grid>
             </Border>
 

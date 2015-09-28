@@ -8,5 +8,9 @@
         <sys:String x:Key="ComboBoxTitle">Mijn tabel</sys:String>
         <!-- Een kleur die je vanuit de applicatie kan benaderen -->
         <SolidColorBrush x:Key="MainColor" Color="Red"></SolidColorBrush>
-    </Application.Resources>
+    <Style TargetType="Border" x:Key="randje">
+      <Setter Property="BorderBrush" Value="Pink" />
+      <Setter Property="BorderThickness" Value="5"  />
+    </Style>
+  </Application.Resources>
 </Application>

@@ -4,15 +4,21 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
+      <RowDefinition />
+        <RowDefinition />
+      <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+    <Border Grid.Row="0" Grid.ColumnSpan="2" Background="Red" />
+    <Border Grid.Row="1" Grid.ColumnSpan="2" Background="White" />
+    <Border Grid.Row="2" Grid.ColumnSpan="2" Background="Blue" />
 
-        <!-- De cell links boven -->
+
+
+    <!-- De cell links boven -->
         <Border  Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="2">
             <Label HorizontalAlignment="Center" VerticalAlignment="Center"
                Content="{StaticResource ComboBoxTitle}" Foreground="{StaticResource MainColor}" />
@@ -20,18 +26,32 @@
 
         <!-- De cell rechts boven -->
         <Border  Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="2">
-             
+      <Button  HorizontalAlignment="Center" VerticalAlignment="Center" >Klik hier!</Button>
         </Border>
 
-        <!-- De cell links onder -->
+        <!-- De cell links midden -->
         <Border  Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="2">
+      <TextBox TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" Foreground="Purple" Height="100" Width="200"  >Hoi</TextBox>
 
-        </Border>
+    </Border>
 
-        <!-- De cell rechts onder -->
-        <Border  Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2">
+        <!-- De cell rechts midden -->
+        <Border  Grid.Row="1" Grid.Column="1" Style="{StaticResource randje}">
+      <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+      <Label HorizontalAlignment="Center" VerticalAlignment="Center">Geheim!!</Label>
+      <PasswordBox Name="wachtwoord" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="uw wachtwoord" Width="225" ></PasswordBox>
+      </StackPanel>
+    </Border>
+    <!-- De cell links onder -->
+    <Border  Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="2">
+      <Label HorizontalAlignment="Center" VerticalAlignment="Center"
+               Content="Wat een mooie tekst" Foreground="{StaticResource MainColor}" />
+    </Border>
+    <!-- De cell rechts onder -->
+    <Border  Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="2">
+      <Label HorizontalAlignment="Center" VerticalAlignment="Center"
+               Content="Hallo" Foreground="{StaticResource MainColor}" />
+    </Border>
 
-        </Border>
-
-    </Grid>
+  </Grid>
 </Window>

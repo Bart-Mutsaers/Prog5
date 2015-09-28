@@ -21,16 +21,16 @@ namespace CommandingAndBindingDemo
         }
 
         public ICommand SetLowCommand { get; set; }
-        public ICommand SetHighCommand { get; set; }
+        public ICommand SetHigh { get; set; }
 
         /// <summary>
         /// Constructor!
         /// </summary>
         public TemperatureVM()
         {
-            this._temperature = 22;
+            this._temperature = 12;
             SetLowCommand = new SetLowCommand(this);
-            SetHighCommand = new SetHighCommand(this);
+            SetHigh = new SetHighCommand(this);
         }
 
 
@@ -45,5 +45,7 @@ namespace CommandingAndBindingDemo
 
         #endregion
 
+
+        
     }
 }
